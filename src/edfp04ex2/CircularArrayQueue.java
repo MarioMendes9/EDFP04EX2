@@ -40,16 +40,15 @@ public class CircularArrayQueue<T> implements QueueADT<T>{
              this.array[0]=element;
          }
          else{
-             rear=(rear+1)%array.length;
-             if(rear!=0){
-                 this.array[this.rear]=element;
-             }else{
+             this.rear=(this.rear+1)%array.length;
+             if(this.array[this.rear]!=null){
                  this.newArray();
-                 //this.rear++;
-                 this.rear=this.array.length-1;
+                 
                  this.array[this.rear]=element;
              }
-             
+             else {
+                 this.array[this.rear]=element;
+             }
              
          }   
         this.count++;
@@ -111,7 +110,7 @@ public class CircularArrayQueue<T> implements QueueADT<T>{
     
     private void newArray(){
         T[] array2=(T[])(new Object[this.array.length+1]);
-        if(this.rear<=this.front && this.rear!= 0){
+        if(this.rear!=0){
            for(int i=0;i<this.rear;i++){
             array2[i]=this.array[i];
         }
@@ -119,16 +118,20 @@ public class CircularArrayQueue<T> implements QueueADT<T>{
             array2[i+1]=this.array[i];
         }
            this.front++;
-           this.array=array2;
+           
         }else{
             
         
         for(int i=0;i<this.array.length;i++){
             array2[i]=this.array[i];
         }
-        this.array=array2;
+        this.rear=this.array.length;
+        
+        
+        
         
         }
+        this.array=array2;
         
     }
     
