@@ -18,24 +18,24 @@ public class TesteCodifica {
        CircularArrayQueue<String> cod=new CircularArrayQueue<>();
        CircularArrayQueue<Integer> key=new CircularArrayQueue<>();   
        
+       cod.enqueue("k");
        cod.enqueue("n");
        cod.enqueue("o");
-       cod.enqueue("v");
-       cod.enqueue("a");
-       cod.enqueue("n");
-       cod.enqueue("j");
+       cod.enqueue("w");
+       cod.enqueue("l");
+       cod.enqueue("e");
+       cod.enqueue("d");
        cod.enqueue("g");
-       cod.enqueue("h");
-       cod.enqueue("l");
+       cod.enqueue("e");
        cod.enqueue(" ");
-       cod.enqueue("m");
-       cod.enqueue("u");
+       cod.enqueue("i");
+       cod.enqueue("s");
        cod.enqueue(" ");
-       cod.enqueue("u");
+       cod.enqueue("p");
+       cod.enqueue("o");
+       cod.enqueue("w");
+       cod.enqueue("e");
        cod.enqueue("r");
-       cod.enqueue("x");
-       cod.enqueue("l");
-       cod.enqueue("v");
        
        key.enqueue(3);
        key.enqueue(1);
@@ -57,8 +57,31 @@ public class TesteCodifica {
        key.enqueue(4);
        
        Codifica codifica=new Codifica(cod, key);
-        codifica.traduzMessage();
+        
+        codifica.codifica();
        System.out.println(codifica.getMensageDesc().toString());
+       key.enqueue(3);
+       key.enqueue(1);
+       key.enqueue(7);
+       key.enqueue(4);
+       key.enqueue(2);
+       key.enqueue(5);
+       key.enqueue(3);
+       key.enqueue(1);
+       key.enqueue(7);
+       key.enqueue(0);//key.enqueue(null);
+       key.enqueue(4);
+       key.enqueue(2);
+       key.enqueue(0);//key.enqueue(null);
+       key.enqueue(5);
+       key.enqueue(3);
+       key.enqueue(1);
+       key.enqueue(7);
+       key.enqueue(4);
+       codifica.traduzMessage();
+       System.out.println(codifica.getMensageCod().toString());
+       
+       
        
        
        

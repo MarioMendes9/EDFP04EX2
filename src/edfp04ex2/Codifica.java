@@ -24,22 +24,35 @@ public class Codifica {
     
     public void traduzMessage(){
         
+        while(!mensageDesc.isEmpty()){
+            
+            
+            char c=mensageDesc.dequeue().charAt(0);
+            int k=key.dequeue();
+        
+            int ch=(int)c;
+             ch=ch-k;
+                
+ 
+            c=(char)ch;
+            String add=""+c;
+            mensageCod.enqueue(add);
+        }
+        }
+       
+    
+      
+   public void codifica(){
+        
         while(!mensageCod.isEmpty()){
             
             
             char c=mensageCod.dequeue().charAt(0);
             int k=key.dequeue();
-            if(c==' '){
-                mensageDesc.enqueue(" ");}
-            
-            
-            else{
-             
-             int ch=(int)c;
-             ch=ch-k;
-                if(ch<97){
-                    ch+=26;
-                }
+        
+            int ch=(int)c;
+             ch=ch+k;
+               
             
             c=(char)ch;
             String add=""+c;
@@ -47,7 +60,7 @@ public class Codifica {
         }
         }
        
-    }
+    
 
     public CircularArrayQueue<String> getMensageCod() {
         return mensageCod;
