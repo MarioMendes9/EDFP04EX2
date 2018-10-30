@@ -13,21 +13,21 @@ package edfp04ex2;
  */
 public class Codifica {
     
-    private CircularArrayQueue<String> mensageCod;
+    private CircularArrayQueue<String> mensageDesco;
     private CircularArrayQueue<Integer> key;
-    private CircularArrayQueue<String> mensageDesc;
+    private CircularArrayQueue<String> mensageCodi;
     public Codifica(CircularArrayQueue<String> mensageCod, CircularArrayQueue<Integer> key) {
-        this.mensageCod = mensageCod;
+        this.mensageDesco = mensageCod;
         this.key = key;
-        this.mensageDesc=new CircularArrayQueue<>(mensageCod.size());
+        this.mensageCodi=new CircularArrayQueue<>(mensageCod.size());
     }
     
     public void traduzMessage(){
         
-        while(!mensageDesc.isEmpty()){
+        while(!mensageCodi.isEmpty()){
             
             
-            char c=mensageDesc.dequeue().charAt(0);
+            char c=mensageCodi.dequeue().charAt(0);
             int k=key.dequeue();
         
             int ch=(int)c;
@@ -36,7 +36,7 @@ public class Codifica {
  
             c=(char)ch;
             String add=""+c;
-            mensageCod.enqueue(add);
+            mensageDesco.enqueue(add);
         }
         }
        
@@ -44,10 +44,10 @@ public class Codifica {
       
    public void codifica(){
         
-        while(!mensageCod.isEmpty()){
+        while(!mensageDesco.isEmpty()){
             
             
-            char c=mensageCod.dequeue().charAt(0);
+            char c=mensageDesco.dequeue().charAt(0);
             int k=key.dequeue();
         
             int ch=(int)c;
@@ -56,22 +56,22 @@ public class Codifica {
             
             c=(char)ch;
             String add=""+c;
-            mensageDesc.enqueue(add);
+            mensageCodi.enqueue(add);
         }
         }
        
     
 
-    public CircularArrayQueue<String> getMensageCod() {
-        return mensageCod;
+    public CircularArrayQueue<String> getMensageDesco() {
+        return mensageDesco;
     }
 
     public CircularArrayQueue<Integer> getKey() {
         return key;
     }
 
-    public CircularArrayQueue<String> getMensageDesc() {
-        return mensageDesc;
+    public CircularArrayQueue<String> getMensageCodi() {
+        return mensageCodi;
     }
     
     

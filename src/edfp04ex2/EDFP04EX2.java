@@ -20,15 +20,23 @@ public class EDFP04EX2 {
       que.enqueue("B");
       que.enqueue("C");
       que.enqueue("D");   
-      que.enqueue("H");
+      que.enqueue("E");
       
       que.dequeue();
-      que.enqueue("J");
-      que.enqueue("E");
-      //System.out.println(que.toString());
-     que.dequeue();
-      que.enqueue("Z");
-     
+      que.dequeue();
+      que.dequeue();
+      que.dequeue();
+      
+      
+              que.enqueue("F");
+     que.enqueue("J");
+//      que.dequeue();
+//      que.enqueue("J");
+//      que.enqueue("E");
+//      //System.out.println(que.toString());
+//     que.dequeue();
+//      que.enqueue("Z");
+//     
       System.out.println(que.toString());
       
     }

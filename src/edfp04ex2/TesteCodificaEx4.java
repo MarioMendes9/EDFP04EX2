@@ -9,7 +9,7 @@ package edfp04ex2;
  *
  * @author User
  */
-public class TesteCodifica {
+public class TesteCodificaEx4 {
 
     /**
      * @param args the command line arguments
@@ -59,7 +59,7 @@ public class TesteCodifica {
        Codifica codifica=new Codifica(cod, key);
         
         codifica.codifica();
-       System.out.println(codifica.getMensageDesc().toString());
+       System.out.println(codifica.getMensageCodi().toString());
        key.enqueue(3);
        key.enqueue(1);
        key.enqueue(7);
@@ -79,7 +79,7 @@ public class TesteCodifica {
        key.enqueue(7);
        key.enqueue(4);
        codifica.traduzMessage();
-       System.out.println(codifica.getMensageCod().toString());
+       System.out.println(codifica.getMensageDesco().toString());
        
        
        
